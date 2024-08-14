@@ -1,0 +1,17 @@
+<?php
+
+namespace App\Filters;
+
+class TaskFilter extends Filters
+{
+    public $var_filters = ['query'];
+
+    public function query($query)
+    {
+        $query = str_replace(" ", "%", $query);
+        return $this->builder->where('name', 'like', "%$query%")
+            ->orWhereHas('employee', function ($queryBuilder) use ($query) {
+                $queryBuilder->where('name', 'like', "%$query%");
+            });
+    }
+}
