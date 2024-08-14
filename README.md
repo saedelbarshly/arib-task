@@ -13,7 +13,7 @@ There there is folder contains database and there is a point i did not understan
 
 data to test 
     
-manager : can register and login
+manager : 
     phone : 01000010000 email : manager1@gmail.com
     phone : 01000020000 email : manager2@gmail.com
     both password : Manager12345@
