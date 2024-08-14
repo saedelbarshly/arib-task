@@ -7,13 +7,16 @@ This task takes approximately 10 hours, divided as follows:
 
 ## let's talk about task
 There there is folder contains database and there is a point i did not understand "Search. Output will display count of employees in each department and sum of there salary" 
-    data to test 
-    manager :
-        phone : 01000010000 email : manager1@gmail.com
-        phone : 01000020000 email : manager2@gmail.com
-        both password : Manager12345@
-    employee:
-        phone : 01224845766 email : saed@gmail.com password : Elsaed12345@
-        phone : 01254875956 email : kavyseryxu@gmail.com password : Employee12345@
+
+data to test 
+    
+manager :
+    phone : 01000010000 email : manager1@gmail.com
+    phone : 01000020000 email : manager2@gmail.com
+    both password : Manager12345@
+    
+employee:
+    phone : 01224845766 email : saed@gmail.com password : Elsaed12345@
+    phone : 01254875956 email : kavyseryxu@gmail.com password : Employee12345@
         
 Thanks 😉
