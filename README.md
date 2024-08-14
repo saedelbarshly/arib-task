@@ -13,13 +13,13 @@ There there is folder contains database and there is a point i did not understan
 
 data to test 
     
-manager : 
-    phone : 01000010000 email : manager1@gmail.com
-    phone : 01000020000 email : manager2@gmail.com
-    both password : Manager12345@
+# manager : can register and login
+phone : 01000010000 email : manager1@gmail.com
+phone : 01000020000 email : manager2@gmail.com
+both password : Manager12345@
     
-employee : can login only
-    phone : 01224845766 email : saed@gmail.com password : Elsaed12345@
-    phone : 01254875956 email : kavyseryxu@gmail.com password : Employee12345@
+# employee : can login only
+phone : 01224845766 email : saed@gmail.com password : Elsaed12345@
+phone : 01254875956 email : kavyseryxu@gmail.com password : Employee12345@
         
 Thanks 😉
