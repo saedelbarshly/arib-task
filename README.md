@@ -9,7 +9,7 @@ This task takes approximately 10 hours, divided as follows:
 2h code review and improvement
 
 ## let's talk about task
-There there is folder contains database and there is a point i did not understand "Search. Output will display count of employees in each department and sum of there salary" 
+There there is folder DatabaseFile contains database and there is a point i did not understand "Search. Output will display count of employees in each department and sum of there salary" 
 
 data to test 
     
