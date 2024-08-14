@@ -1,8 +1,11 @@
 First, i would like to thank you for the good communication and also for this task ..  
 
 This task takes approximately 10 hours, divided as follows:
+
 6h To understand the task, create the database and implement backend logic .
+
 2h building ui
+
 2h code review and improvement
 
 ## let's talk about task
