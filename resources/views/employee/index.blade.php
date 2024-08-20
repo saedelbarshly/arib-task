@@ -32,9 +32,10 @@
                         <tbody>
                             <!-- Data will be populated by AJAX -->
                         </tbody>
-                        <input type="hidden" name="hidden_column_name" id="hidden_column_name" value="id" />
-                        <input type="hidden" name="hidden_page" id="hidden_page" value="1" />
                       </table>
+                      <div id="pagination-links" class="mt-4">
+                    
+                      </div>
                 </div>
             </div>
         </div>
@@ -52,17 +53,25 @@
                     page: page,
                     query: query
                 },
-                success: function(data) {
-                    $('tbody').html(data);
+                success: function(response) {
+                    $('tbody').html(response.data);
+                    $('#pagination-links').html(response.links);
                 }
             });
         }
 
-        fetch_data(1, '');
+        fetch_data(1, ''); // Fetch initial data
 
         $('#search').on('keyup', function() {
-            var query = $(this).val();
+            let query = $(this).val();
             fetch_data(1, query);
+        });
+
+        $(document).on('click', '.pagination a', function(event) {
+            event.preventDefault();
+            let page = $(this).attr('href').split('page=')[1];
+            let query = $('#search').val();
+            fetch_data(page, query);
         });
     });
     </script>

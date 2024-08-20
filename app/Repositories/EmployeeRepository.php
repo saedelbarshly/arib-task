@@ -8,7 +8,7 @@ class EmployeeRepository implements EmployeeRepositoryInterface
 {
     public function getData($filter)
     {
-        return User::where('manager_id', auth()->user()->id)->filter($filter)->get();
+        return User::where('manager_id', auth()->user()->id)->filter($filter)->paginate(2);
     }
 
     public function show($id)

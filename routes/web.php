@@ -58,6 +58,7 @@ Route::middleware(['auth','can:manager-check'])->group(function () {
         Route::get('/edit/{task}','edit')->name('edit');
         Route::put('/update/{task}','update')->name('update');
         Route::get('/delete/{task}','delete')->name('delete');
+        
     });
 });
 

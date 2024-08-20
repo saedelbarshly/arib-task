@@ -16,8 +16,14 @@ class DepartmentController extends Controller
 
     public function data(DepartmentFilter $filter)
     {
-        $departments = Department::filter($filter)->get();
-        return view('department.data_table',compact('departments'));
+        $departments = Department::filter($filter)->paginate(3);
+        $data = view('department.data_table',compact('departments'))->render();
+        $links = $departments->links()->render();
+    
+        return response()->json([
+            'data' => $data,
+            'links' => $links
+        ]);
     }
 
     public function create(){

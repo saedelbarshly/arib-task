@@ -29,9 +29,13 @@ class EmployeeController extends Controller
 
     public function data(EmployeeFilter $filter)
     {
- 
         $employees = $this->employeeService->getData($filter);
-        return view('employee.data_table', compact('employees'));
+        $data = view('employee.data_table', compact('employees'))->render();
+        $links = $employees->links()->render();
+        return response()->json([
+            'data' => $data,
+            'links' => $links
+        ]);
     }
 
     public function show($id)

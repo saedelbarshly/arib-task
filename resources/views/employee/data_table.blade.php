@@ -1,7 +1,7 @@
 @foreach ($employees as $employee)               
 <tr>
   <td>
-      {{ $loop->iteration }}
+      {{ ($employees->currentPage() - 1) * $employees->perPage() + $loop->iteration }}
   </td>
   <td class="border px-4 py-2">{{ $employee->name }}</td>
   <td class="border px-4 py-2">{{ $employee->salary }}</td>
@@ -27,3 +27,5 @@
 </td>
 </tr>
 @endforeach
+
+{{ $employees->links() }}

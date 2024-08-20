@@ -16,9 +16,13 @@ class TaskController extends Controller
     }
     public function data(TaskFilter $filter)
     {
-        $tasks = Task::filter($filter)->get();
-        $employees = User::where('manager_id',auth()->user()->id)->get();
-        return view('task.data_tabel',compact('tasks','employees'));
+        $tasks = Task::filter($filter)->paginate(2);
+        $data = view('task.data_tabel', compact('tasks'))->render();
+        $links = $tasks->links()->render();
+        return response()->json([
+            'data' => $data,
+            'links' => $links
+        ]);
     }
 
     public function create()

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\EmployeeRepository;
 use App\Repositories\EmployeeRepositoryInterface;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +33,6 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('manager-check', function (User $user) {
             return $user->type == 'manager';
         });
+        Paginator::useBootstrapFive();
     }
 }

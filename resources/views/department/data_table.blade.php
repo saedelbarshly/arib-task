@@ -1,7 +1,7 @@
 @foreach ($departments as $department)               
 <tr>
     <td class="border px-4 py-2">
-        {{ $loop->iteration }}
+        {{ ($departments->currentPage() - 1) * $departments->perPage() + $loop->iteration }}
     </td>
   <td class="border px-4 py-2">{{ $department->name }}</td>
   <td class="border px-4 py-2">{{ $department->employees()->count() }}</td>
@@ -22,3 +22,6 @@
 </td>
 </tr>
 @endforeach
+
+{{ $departments->links() }}
+
