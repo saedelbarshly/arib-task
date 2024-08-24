@@ -59,7 +59,7 @@
                         search: params.term // Search term
                     };
                 },
-                processResults: function (data) {
+                processResults: function (data) {   
                     return {
                         results: $.map(data, function (item) {
                             return {
