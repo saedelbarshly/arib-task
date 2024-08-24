@@ -4,7 +4,7 @@ namespace App\Filters;
 
 class EmployeeFilter extends Filters
 {
-    public $var_filters = ['query'];
+    public $var_filters = ['query','departmentId'];
 
     public function query($query)
     {
@@ -15,5 +15,10 @@ class EmployeeFilter extends Filters
             'phone',
             'salary',
         ], 'like' , "%$query%");
+    }
+
+    public function departmentId($departmentId)
+    {
+        return $this->builder->where('department_id', $departmentId);
     }
 }

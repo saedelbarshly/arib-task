@@ -1,10 +1,12 @@
 <?php
 
-use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TaskController;
+use App\Http\Controllers\AjaxController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SupportController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -59,6 +61,19 @@ Route::middleware(['auth','can:manager-check'])->group(function () {
         Route::put('/update/{task}','update')->name('update');
         Route::get('/delete/{task}','delete')->name('delete');
         
+    });
+});
+
+
+Route::middleware('auth')->controller(SupportController::class)->group(function () {
+    Route::prefix('support')->name('suppert.')->group(function () {
+    Route::get('/','getEmployeeDependonDepartment')->name('select');
+    });
+});
+
+Route::middleware('auth')->controller(AjaxController::class)->group(function () {
+    Route::prefix('ajax')->name('ajax.')->group(function () {
+      Route::get('/employee','getEmployee')->name('employee');
     });
 });
 
